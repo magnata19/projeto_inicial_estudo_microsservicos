@@ -2,7 +2,25 @@ server:
   port: 3000
 
 spring:
+  kafka:
+    bootstrap-servers: ${KAFKA_BROKE:localhost:9092}
+    topic:
+      start-saga: start-saga
+      notify-ending: notify-ending
+    consumer:
+      group-id: order-group
+      auto-offset-reset: latest
+
+
   datasource:
     mongodb:
       database: admin
       uri: ${MONGO_DB_URI:mongodb://admin:123456@localhost:27017}
+
+
+#desabilitar os logs que o kafka exibe
+logging:
+  level:
+    org:
+      apache:
+        kafka: OFF
