@@ -1,4 +1,4 @@
-package br.com.microservices.orchestrated.orderservice.config.kafka;
+package br.com.microservices.orchestrated.orchestratorservice.config.kafka;
 
 import lombok.RequiredArgsConstructor;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
@@ -15,8 +15,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 @EnableKafka
-@Configuration
 @RequiredArgsConstructor
+@Configuration
 public class KafkaConfig {
 
     @Value("${spring.kafka.bootstrap-servers}")
